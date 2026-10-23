@@ -1,0 +1,32 @@
+{
+  "_doc": "REGRAS DE ARTE VERIFICÁVEIS POR MÁQUINA (QA_LOCK). Limiares, orçamentos e regras por tipo de asset. Derivadas de STYLE_GUIDE.md e ART_PIPELINE.md. O EXECUTOR NÃO pode editar este arquivo para fazer um asset passar — somente o usuário. A paleta fica em art/palette.json (extensível só após a decisão D1).",
+  "rulesVersion": "1.0.0",
+  "assetsDir": "public/assets",
+  "distDir": "dist",
+  "types": {
+    "char":     { "maxColors": 48, "outline": true, "requireRows": true, "checkClip": true, "baselineTolerance": 1, "centerDriftTolerance": 2 },
+    "npc":      { "maxColors": 48, "outline": true, "requireRows": true, "checkClip": true, "baselineTolerance": 1, "centerDriftTolerance": 2 },
+    "enemy":    { "maxColors": 48, "outline": true, "requireRows": true, "checkClip": true },
+    "boss":     { "maxColors": 64, "outline": true, "requireRows": true, "checkClip": true },
+    "portrait": { "maxColors": 48, "outline": true },
+    "tileset":  { "frame": [16, 16], "maxColors": 96 },
+    "tile":     { "frame": [16, 16], "maxColors": 32 },
+    "prop":     { "maxColors": 48 },
+    "icon":     { "frame": [16, 16], "maxColors": 24 },
+    "ui":       { "maxColors": 32 },
+    "bg":       { "size": [384, 216], "maxColors": 96 },
+    "fx":       { "maxColors": 32, "requireRows": true },
+    "font":     { "maxColors": 8 }
+  },
+  "thresholds": {
+    "outlineBoundaryRatio": 0.8,
+    "minOpaquePerFrame": 8,
+    "frameJumpRatio": 0.6,
+    "maxFileKB": 512,
+    "maxImageDimension": 2048
+  },
+  "budgets": {
+    "publicAssetsMB": 8,
+    "distAssetsMB": 10
+  }
+}

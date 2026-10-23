@@ -1,0 +1,106 @@
+{
+  "_doc": "PALETA v2 PROPOSTA (Decisão D1). Mantém 100% das 24 cores da v1 e expande para 69 cores organizadas em rampas de 4 a 6 tons. NÃO SUBSTITUI art/palette.json antes da aprovação 'APROVO D1'.",
+  "paletteVersion": "2.0.0-proposed",
+  "status": "v2-proposed-D1",
+  "totalColors": 69,
+  "v1ColorsRetained": 24,
+  "ramps": {
+    "amber_gold": [
+      { "name": "gold_pale", "hex": "#FFF1C5", "role": "Highlight máximo de cristais e Núcleo" },
+      { "name": "gold_highlight", "hex": "#FFE4A0", "role": "v1 - Brilho dourado e faíscas" },
+      { "name": "amber_light", "hex": "#E8C876", "role": "v1 - Luz quente de lanternas e Núcleo" },
+      { "name": "amber_mid", "hex": "#D4A24E", "role": "v1 - Tom base de âmbar e XP" },
+      { "name": "amber_dark", "hex": "#A67B2E", "role": "v1 - Sombra de âmbar e ouro velho" },
+      { "name": "amber_deep", "hex": "#785418", "role": "Sombra profunda de metais dourados" }
+    ],
+    "earth_wood": [
+      { "name": "earth_pale", "hex": "#B8936E", "role": "Madeira clara e destaque de couro" },
+      { "name": "earth_light", "hex": "#8B6B4A", "role": "v1 - Túnica terrosa de Kaël e terra batida" },
+      { "name": "earth_mid", "hex": "#5C4433", "role": "v1 - Couro escuro e troncos" },
+      { "name": "earth_dark", "hex": "#3A2B1F", "role": "v1 - Madeira envelhecida e solo profundo" },
+      { "name": "earth_deep", "hex": "#261B13", "role": "Sombra de solo e frestas de madeira" },
+      { "name": "wood_darkest", "hex": "#19110B", "role": "Vãos de portas e sombras terrosas" }
+    ],
+    "skin_hair": [
+      { "name": "skin_fair_hi", "hex": "#FFE8D1", "role": "Highlight de pele (Lia/Kaël)" },
+      { "name": "skin_fair_base", "hex": "#EBCBB0", "role": "Pele clara base" },
+      { "name": "skin_fair_shadow", "hex": "#C49E82", "role": "Sombra de pele clara" },
+      { "name": "skin_warm_base", "hex": "#D9A066", "role": "Pele bronzeada (Torvak/aldeões)" },
+      { "name": "skin_warm_shadow", "hex": "#99663E", "role": "Sombra de pele bronzeada" },
+      { "name": "hair_dark_brown", "hex": "#61391D", "role": "Cabelo castanho e barba" }
+    ],
+    "crystal_water": [
+      { "name": "crystal_hi", "hex": "#B8F6FA", "role": "Brilho puro de cristal e água límpida" },
+      { "name": "crystal_light", "hex": "#7DE8F0", "role": "v1 - Cristal de Éter iluminado" },
+      { "name": "crystal_mid", "hex": "#4EC8D4", "role": "v1 - Cristal base e MP" },
+      { "name": "crystal_dark", "hex": "#2E9AA5", "role": "v1 - Sombra de cristal" },
+      { "name": "crystal_deep", "hex": "#1D6D78", "role": "Água profunda de caverna" },
+      { "name": "water_abyss", "hex": "#11454C", "role": "Profundezas aquáticas" }
+    ],
+    "sky_night": [
+      { "name": "sky_pale", "hex": "#8BB5E8", "role": "Céu ao amanhecer e reflexos" },
+      { "name": "sky_mid", "hex": "#5384C7", "role": "Céu diurno límpido" },
+      { "name": "night_blue", "hex": "#2F5294", "role": "Atmosfera crepuscular e névoa fria" },
+      { "name": "night_deep", "hex": "#1A2F5E", "role": "Céu noturno" },
+      { "name": "night_darkest", "hex": "#0E1A38", "role": "Sombra fria noturna" }
+    ],
+    "violet_resonance": [
+      { "name": "violet_hi", "hex": "#C8A8F2", "role": "Faíscas da Ressonância Dissonância" },
+      { "name": "violet_light", "hex": "#9B6DD7", "role": "v1 - Manto de Mirael e magia de Éter" },
+      { "name": "violet_mid", "hex": "#6B3FA0", "role": "v1 - Borda de UI e energia mística" },
+      { "name": "violet_dark", "hex": "#4A2875", "role": "v1 - Contorno canônico v1" },
+      { "name": "violet_deep", "hex": "#321854", "role": "Sombra profunda de tecidos e magia" },
+      { "name": "violet_void", "hex": "#1D0B33", "role": "Vazio místico e boss Sombra do Selo" }
+    ],
+    "shadow_outline": [
+      { "name": "shadow_deep", "hex": "#3D2E52", "role": "v1 - Sombra intermediária" },
+      { "name": "shadow_purple", "hex": "#2A1F3D", "role": "v1 - Sombra blob e oclusão de ambiente" },
+      { "name": "outline_dark", "hex": "#1D1528", "role": "Contorno refinado HD-2D (mais legível em fundos variados)" },
+      { "name": "ui_bg_dark", "hex": "#1A0F2E", "role": "v1 - Fundo das caixas de UI" },
+      { "name": "shadow_darkest", "hex": "#0A0612", "role": "v1 - Preto oficial do projeto / letterbox" }
+    ],
+    "green_life": [
+      { "name": "green_hi", "hex": "#76C289", "role": "Folhagem sob sol e brotos jovens" },
+      { "name": "green_alive", "hex": "#4A8B5C", "role": "v1 - Grama viva de Lumen e Planície norte" },
+      { "name": "green_dark", "hex": "#2E5A3A", "role": "v1 - Sombra de copas e arbustos densos" },
+      { "name": "green_deep", "hex": "#1E3E26", "role": "Sombra profunda de floresta" },
+      { "name": "heal_glow", "hex": "#62D96B", "role": "Brilho de cura e vitalidade" },
+      { "name": "heal_mid", "hex": "#35A844", "role": "Efeito de restauração de vida" }
+    ],
+    "poison_miasma": [
+      { "name": "poison_hi", "hex": "#A7F249", "role": "Miasma venenoso luminoso" },
+      { "name": "poison_mid", "hex": "#72C924", "role": "Status de veneno e esporos" },
+      { "name": "poison_dark", "hex": "#4A8712", "role": "Seiva tóxica e lodo corrompido" },
+      { "name": "poison_deep", "hex": "#2A5408", "role": "Sombra de veneno" },
+      { "name": "poison_abyss", "hex": "#153003", "role": "Poça cáustica profunda" }
+    ],
+    "ash_stone": [
+      { "name": "gray_pale", "hex": "#C4BEB3", "role": "Rocha calcária iluminada" },
+      { "name": "gray_bone", "hex": "#9B9286", "role": "v1 - Ossos fossilizados e texto secundário UI" },
+      { "name": "gray_dead", "hex": "#7A7A7A", "role": "v1 - Solo morto da Planície sul" },
+      { "name": "gray_ash", "hex": "#4A4A4A", "role": "v1 - Cinzas vulcânicas e Espectro de Cinzas" },
+      { "name": "gray_charcoal", "hex": "#2C2C2C", "role": "Pedra enegrecida e fuligem" },
+      { "name": "gray_slate", "hex": "#1A1A1A", "role": "Ardósia escura" }
+    ],
+    "fire_damage": [
+      { "name": "fire_core_amber", "hex": "#FFAE42", "role": "Pico térmico e núcleo de explosão" },
+      { "name": "fire_hi", "hex": "#FF7A59", "role": "Labareda e rastro de impacto" },
+      { "name": "fire_mid", "hex": "#E64A35", "role": "Corpo ígneo" },
+      { "name": "hp_red", "hex": "#C04040", "role": "v1 - Barra de HP crítico e números de dano" },
+      { "name": "hp_dark", "hex": "#8F2020", "role": "Sombra de ferimento e sangue seco" },
+      { "name": "hp_deep", "hex": "#5E1212", "role": "Borda de barra de HP" }
+    ],
+    "highlights_ui": [
+      { "name": "white_highlight", "hex": "#F5F0E1", "role": "v1 - Branco quente (substituto de #FFFFFF)" },
+      { "name": "cream_subtle", "hex": "#EAE3CE", "role": "Pergaminho e texto claro de diálogo" },
+      { "name": "ui_panel_light", "hex": "#483466", "role": "Borda interna de 9-slice e relevo" },
+      { "name": "ui_panel_mid", "hex": "#312347", "role": "Fundo intermediário de janela" },
+      { "name": "ui_panel_dark", "hex": "#251838", "role": "Fundo escuro contrastante de slots" },
+      { "name": "ui_accent_gold", "hex": "#D1B06A", "role": "Detalhe dourado em cantos de moldura" }
+    ]
+  },
+  "forbidden": {
+    "#000000": "Preto puro é proibido. Use #0A0612 (preto do projeto) ou #1D1528 (contorno).",
+    "#FFFFFF": "Branco puro é proibido. Use #F5F0E1 (branco quente) ou #FFF1C5 (ouro highlight)."
+  }
+}

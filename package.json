@@ -1,0 +1,28 @@
+{
+  "name": "cinzas-do-eter",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Cinzas do Éter — JRPG 16-bit original",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit && echo Typecheck passed",
+    "qa:art": "node tools/qa/validate-assets.mjs",
+    "qa:art:strict": "node tools/qa/validate-assets.mjs --strict --dist",
+    "qa:art:selftest": "node tools/qa/validate-assets.mjs --self-test"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.2",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "phaser": "3"
+  }
+}

@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+.bun/
+
+# Build output
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+
+# Tauri & Binaries
+src-tauri/target/
+src-tauri/gen/
+*.exe
+*.msi
+*backup*.json
+
+# Kit Graficos Temporario
+KIT_GRAFICOS_10-10.zip
+
+# Arte bruta e relatorios/videos
+art-source/raw/
+qa/evidence/**/*.webm
+qa/reports/

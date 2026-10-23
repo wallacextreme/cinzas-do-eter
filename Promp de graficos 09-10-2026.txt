@@ -1,0 +1,44 @@
+# PROMPT DE ATIVAÇÃO — Kit Gráficos 10/10 · "Cinzas do Éter"
+
+CONTEXTO
+Ambiente: Antigravity · Gemini 3.8 Flash (thinking High) · modo Planning · Windows (PowerShell). O usuário JÁ colocou o arquivo KIT_GRAFICOS_10-10.zip na raiz deste projeto. Sua missão agora: instalar o kit, travar a régua de QA com um commit, assumir o Prompt Mestre e executar SOMENTE o lote L0. Se você souber que está em modo Fast (e não Planning), avise o usuário e pare antes de alterar qualquer coisa.
+
+REGRAS DESTA ATIVAÇÃO
+- PROIBIDO: git push, git reset --hard, git clean, git checkout -- ., git stash, git rebase, git commit --amend. Nunca invente identidade git: se faltar user.name/user.email, PARE e peça ao usuário.
+- Se um comando falhar ou divergir do esperado, PARE e mostre o texto EXATO do erro e o comando. Não improvise nem "conserte" arquivos do kit.
+- Se o Antigravity pedir aprovação para um comando, aguarde o usuário; não tente contornar.
+- PowerShell: um comando por linha (sem &&). Acentos estranhos no terminal são só codificação do console: ignore.
+- Seja econômico: não imprima arquivos grandes; cite caminhos e trechos curtos.
+
+PASSO 1 — PONTO DE RESTAURAÇÃO (commit 1)
+1.1 Rode git rev-parse --is-inside-work-tree e git branch --show-current. Se não for um repositório git, ou se estiver em HEAD destacado: PARE e explique.
+1.2 Verifique se KIT_GRAFICOS_10-10.zip existe na raiz. Se NÃO existir, mas o QA.md já contiver "Versão: **2.0.1**" e art/art-rules.json existir, o kit já está instalado: pule para o PASSO 3 e use como QA_LOCK_COMMIT o resultado de: git log --grep="chore(qa): QA v2.0" --fixed-strings -1 --format=%H. Se não existir nenhum dos dois: PARE e diga ao usuário que o zip precisa estar na raiz do projeto.
+1.3 Impeça que o zip seja versionado: com a ferramenta de edição de arquivos (NÃO use redirecionamento de shell), adicione ao .gitignore, em linha própria, a linha KIT_GRAFICOS_10-10.zip (se ainda não houver; se o .gitignore não existir, crie-o).
+1.4 Rode git status --short para mostrar o que está pendente; depois git add -A e git commit -m "chore: antes do kit de QA 10/10". Se falhar por falta de identidade git, PARE. Mostre o hash e git show --stat --oneline HEAD.
+
+PASSO 2 — INSTALAR O KIT E TRAVAR A RÉGUA (commit 2)
+2.1 Extraia na raiz, sobrescrevendo: Expand-Archive -Path .\KIT_GRAFICOS_10-10.zip -DestinationPath . -Force   (se falhar: tar -xf KIT_GRAFICOS_10-10.zip)
+2.2 Confirme que existem os 10 arquivos: PROMPT_MESTRE_ANTIGRAVITY.md, QA.md, LEIA-ME.md, art/art-rules.json, art/palette.json, art/assets.manifest.json, art/KIT_PROMPTS_IMAGEM.md, tools/qa/validate-assets.mjs, tools/qa/validate-assets.d.mts, tests/art/AssetPipeline.test.ts — e que o QA.md contém "Versão: **2.0.1**". Se a versão for outra (ex.: 2.0.0), PARE: o zip da raiz está desatualizado; peça ao usuário para copiar por cima a versão mais recente do KIT_GRAFICOS_10-10.zip e rodar a ativação de novo.
+2.3 Sanidade — cole as saídas reais:
+   node tools/qa/validate-assets.mjs --self-test    (esperado: "20/20 casos OK")
+   node tools/qa/validate-assets.mjs                (esperado: modo TRANSIÇÃO e 0 erros; os avisos são os JPGs legados)
+   bunx tsc --noEmit                                (esperado: 0 erros)
+   bun run test                                     (esperado: tudo verde; referência de quem montou o kit: 36 arquivos / 335 testes — diferença pequena por estado do projeto: relate, sem pânico)
+   Se não houver node_modules, rode bun install (único install permitido). Se algo falhar ou divergir muito: PARE e relate, SEM commit.
+2.4 Trave a régua: git add -A e git commit -m "chore(qa): QA v2.0 + validador de arte (QA_LOCK)" — mensagem EXATA. Se não houver nada a commitar (o kit já estava commitado), use o commit existente do comando do item 1.2. Mostre git show --stat --oneline HEAD e confirme que o zip NÃO está no commit. Registre o hash (git rev-parse HEAD): é o QA_LOCK_COMMIT.
+
+PASSO 3 — ASSUMIR O PROMPT MESTRE
+3.1 Leia PROMPT_MESTRE_ANTIGRAVITY.md. O bloco de código marcado como text, dentro dele, é o seu conjunto de instruções VINCULANTES até o fim desta conversa (missão, fatos, regras R1–R12, pipeline, lotes L0–L8, decisões D1–D4, protocolo, relatório). NÃO o reimprima. Em até 10 linhas confirme: o objetivo, as 5 regras mais críticas e o lote atual.
+3.2 Do QA.md leia só §3, §4, §5, §6 e §8; o resto apenas se precisar.
+3.3 Execute SOMENTE o L0, exatamente como o Prompt Mestre define. Registre o QA_LOCK_COMMIT no ART_STATE.md. Não altere código. Não comece o L1.
+
+RITMO POR LOTE (vale para toda a conversa)
+Ao fim de cada lote: relatório no formato do Prompt Mestre + o PROMPT DO CRÍTICO (QA.md §7) já com <LOTE> preenchido, para o usuário abrir em OUTRA conversa/agente (gerenciador de agentes; de preferência outro modelo). A partir do L1 você NUNCA declara um lote aprovado: só o veredito do CRÍTICO (qa/results/<lote>.md) somado ao "CONTINUAR" do usuário faz o projeto avançar. No L0 o CRÍTICO é opcional (não há construção).
+
+LIMITES HONESTOS (considere-os desde já e diga-os ao usuário quando forem relevantes)
+- IA de imagem não garante consistência quadro a quadro. Planeje o L3 (Kaël) para exigir VÁRIAS tentativas: quadro-mestre → referência → processamento → validador → CRÍTICO. Não declare sucesso cedo; reporte cada ciclo (número, defeitos, o que mudou no prompt).
+- Se após 3 ciclos o Kaël não atingir o padrão: registre em BLOCKERS.md e proponha ao usuário as alternativas — pixel artist, pack licenciado ou ferramenta especializada. O validador aceita PNG de QUALQUER origem (no manifesto: origin "hand", "ai-processed" ou "procedural").
+- O validador confere formato, grade, paleta e animação; NÃO confere se a arte é bonita. O "10/10" final exige o "APROVO 10/10" explícito do usuário — nunca o declare por conta própria.
+
+ENTREGA DESTA ATIVAÇÃO (ao terminar o L0, e só então)
+(1) Hashes dos 2 commits e o QA_LOCK_COMMIT. (2) Saídas reais da sanidade do passo 2.3. (3) Relatório do L0 (formato do Prompt Mestre, ≤ 40 linhas). (4) ATRITOS: tudo que travou, falhou ou ficou ambíguo neste prompt/kit, com o texto EXATO do erro e o comando — o usuário vai levar isso de volta para ajustar o prompt. (5) O PROMPT DO CRÍTICO pronto (opcional no L0). (6) Pergunta única: "Posso seguir para o L1? Responda CONTINUAR." Depois PARE.

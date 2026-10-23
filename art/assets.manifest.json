@@ -1,0 +1,96 @@
+{
+  "_doc": "MANIFESTO DE ASSETS DE PRODUÇÃO. Toda imagem em public/assets/ DEVE estar listada aqui. Campos: id (único), path (relativo à raiz), type (char|npc|enemy|boss|portrait|tileset|tile|prop|icon|ui|bg|fx|font), frame [larguraQuadro, alturaQuadro], grid [colunas, linhas], rows [{name, frames, fps, baseline?, hold?}] (obrigatório p/ char, npc, enemy, boss, fx), origin (ai-processed|procedural|hand), source (arquivo bruto/conceito, obrigatório se ai-processed), promptRef (arquivo com o prompt, obrigatório se ai-processed), generator (script, obrigatório se procedural), status (DRAFT|IN_REVIEW|APPROVED), evidence (screenshot(s) em qa/evidence/, OBRIGATÓRIO para APPROVED), maxColors/outline/softAlpha/size (overrides opcionais). 'strict': false = MODO TRANSIÇÃO (órfãos/legados são avisos). O lote L1 só termina quando 'strict' for true.",
+  "version": 1,
+  "strict": true,
+  "assets": [
+    {
+      "id": "char_kael_field",
+      "path": "public/assets/characters/char_kael_field_32x48.png",
+      "type": "char",
+      "frame": [32, 48],
+      "grid": [4, 8],
+      "rows": [
+        { "name": "walk_down", "frames": 4, "fps": 8 },
+        { "name": "walk_left", "frames": 4, "fps": 8 },
+        { "name": "walk_right", "frames": 4, "fps": 8 },
+        { "name": "walk_up", "frames": 4, "fps": 8 },
+        { "name": "idle_down", "frames": 4, "fps": 4 },
+        { "name": "idle_left", "frames": 4, "fps": 4 },
+        { "name": "idle_right", "frames": 4, "fps": 4 },
+        { "name": "idle_up", "frames": 4, "fps": 4 }
+      ],
+      "origin": "procedural",
+      "generator": "tools/art/generate-kael.mjs",
+      "status": "APPROVED",
+      "evidence": [
+        "qa/evidence/L3/V11_kael_field_contact_1x.png",
+        "qa/evidence/L3/V12_kael_field_walk_1x.png"
+      ]
+    },
+    {
+      "id": "char_kael_battle",
+      "path": "public/assets/characters/char_kael_battle_48x48.png",
+      "type": "char",
+      "frame": [48, 48],
+      "grid": [6, 11],
+      "rows": [
+        { "name": "idle", "frames": 4, "fps": 4 },
+        { "name": "advance", "frames": 4, "fps": 8 },
+        { "name": "attack", "frames": 6, "fps": 12 },
+        { "name": "resonance", "frames": 5, "fps": 10 },
+        { "name": "item", "frames": 3, "fps": 8 },
+        { "name": "defend", "frames": 2, "fps": 6 },
+        { "name": "damage", "frames": 2, "fps": 10 },
+        { "name": "wounded", "frames": 2, "fps": 4 },
+        { "name": "victory", "frames": 4, "fps": 6 },
+        { "name": "defeat", "frames": 3, "fps": 4 },
+        { "name": "flee", "frames": 3, "fps": 8 }
+      ],
+      "origin": "procedural",
+      "generator": "tools/art/generate-kael.mjs",
+      "status": "APPROVED",
+      "evidence": [
+        "qa/evidence/L3/V13_kael_battle_contact_1x.png"
+      ]
+    },
+    {
+      "id": "portrait_kael_neutral",
+      "path": "public/assets/portraits/portrait_kael_neutral_48x48.png",
+      "type": "portrait",
+      "frame": [48, 48],
+      "origin": "procedural",
+      "generator": "tools/art/generate-kael.mjs",
+      "status": "APPROVED",
+      "evidence": [
+        "qa/evidence/L3/V13_kael_portraits_icons_1x.png",
+        "qa/evidence/L3/portrait_kael_neutral_1x.png"
+      ]
+    },
+    {
+      "id": "portrait_kael_serious",
+      "path": "public/assets/portraits/portrait_kael_serious_48x48.png",
+      "type": "portrait",
+      "frame": [48, 48],
+      "origin": "procedural",
+      "generator": "tools/art/generate-kael.mjs",
+      "status": "APPROVED",
+      "evidence": [
+        "qa/evidence/L3/V13_kael_portraits_icons_1x.png",
+        "qa/evidence/L3/portrait_kael_serious_1x.png"
+      ]
+    },
+    {
+      "id": "icon_kael",
+      "path": "public/assets/icons/icon_kael_16x16.png",
+      "type": "icon",
+      "frame": [16, 16],
+      "origin": "procedural",
+      "generator": "tools/art/generate-kael.mjs",
+      "status": "APPROVED",
+      "evidence": [
+        "qa/evidence/L3/V13_kael_portraits_icons_1x.png",
+        "qa/evidence/L3/icon_kael_1x.png"
+      ]
+    }
+  ]
+}
